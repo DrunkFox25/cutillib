@@ -7,7 +7,7 @@ CPPFLAGS = -Wall -g -DBUILD_DLL
 LDFLAGS = -shared -Wl,--output-def=bin\Debug\libutil.def -Wl,--out-implib=bin\Debug\libutil.a -Wl,--dll
 LOADLIBS = -lgdi32
 
-objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\Debug\screen.o obj\Debug\systems.o PETYA
+objects = colortable.o main.o outsrcstring.o screen.osystems.o
 
 
 all: $(objects)
@@ -20,8 +20,7 @@ $(objects): %.o: %.cpp #Makefile:14: *** missing separator.
 bin\Debug\util.dll: $(objects)
 	$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
-PETYA:
-	echo PETYA
+
 
 
 clean:
