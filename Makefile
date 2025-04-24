@@ -10,14 +10,13 @@ objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\D
 
 all: $(objects)
 
-$(objects): %.o: %.cpp
-  echo $^
-  echo $@
-  $(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
+$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
+  echo "prereq" $^ "target" $@
+  #$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
-bin\Debug\util.dll: $(objects)
-  $(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
+#bin\Debug\util.dll: $(objects)
+  #$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 
 clean:
