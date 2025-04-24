@@ -12,7 +12,7 @@ objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\D
 #all: $(objects)
 
 #$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
-  echo "prereq" $^ "target" $@
+  #echo "prereq" $^ "target" $@
   #$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
