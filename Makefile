@@ -11,6 +11,8 @@ objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\D
 all: $(objects)
 
 $(objects): %.o: %.cpp
+  echo $^
+  echo $@
   $(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
