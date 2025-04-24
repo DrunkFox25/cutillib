@@ -9,6 +9,9 @@ LOADLIBS = -lgdi32
 
 objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\Debug\screen.o obj\Debug\systems.o
 
+PETYA:
+  echo PETYA
+
 #all: $(objects)
 
 #$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
