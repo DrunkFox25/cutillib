@@ -1,3 +1,4 @@
+
 CC = gcc
 CXX = gcc
 
@@ -8,9 +9,9 @@ LOADLIBS = -lgdi32
 
 objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\Debug\screen.o obj\Debug\systems.o
 
-all: $(objects)
+#all: $(objects)
 
-$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
+#$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
   echo "prereq" $^ "target" $@
   #$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
@@ -19,5 +20,5 @@ $(objects): %.o: %.cpp #Makefile:14: *** missing separator.
   #$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 
-clean:
-  rm -f objects
+#clean:
+#  rm -f objects
