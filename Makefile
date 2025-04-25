@@ -7,10 +7,10 @@ CPPFLAGS = -Wall -g -DBUILD_DLL
 LDFLAGS = -shared -Wl,--output-def=bin\Debug\libutil.def -Wl,--out-implib=bin\Debug\libutil.a -Wl,--dll
 LOADLIBS = -lgdi32
 
-objects = colortable.o main.o outsrcstring.o screen.o systems.o
+objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\Debug\screen.o obj\Debug\systems.o
 
 
-all: $(objects)
+all: $(objects) bin\Debug\util.dll
 
 $(objects): %.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
@@ -23,7 +23,7 @@ bin\Debug\util.dll: $(objects)
 
 
 clean:
-	rm -f objects
+	rm -f $(objects)
 
 check:
 	echo check
