@@ -29,7 +29,7 @@ extern "C"
 {
 #endif
 
-void DLL_EXPORT get_color(const char* name, COLOR_HEX &color);
+COLOR_HEX DLL_EXPORT getColor(const char* name);
 
 int DLL_EXPORT loadColorTable(const char* path);
 
