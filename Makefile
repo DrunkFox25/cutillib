@@ -30,7 +30,7 @@ $(objects): $(objectdir)/%.o: %.cpp | $(objectdir)
 
 $(build): $(objects) | $(builddir)
 	touch $(build)
-	$(CC) $(LDFLAGS) $^ $(LOADLIBS) $(LDLIBS) -o $@
+	$(CXX) $(LDFLAGS) $^ $(LOADLIBS) $(LDLIBS) -o $@
 
 
 
