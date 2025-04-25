@@ -8,11 +8,12 @@ LDFLAGS = -shared -Wl,--output-def=bin\Debug\libutil.def -Wl,--out-implib=bin\De
 LOADLIBS = -lgdi32
 
 objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\Debug\screen.o obj\Debug\systems.o
+objectdir = obj\Debug\
 
 
 all: $(objects) bin\Debug\util.dll
 
-$(objects): obj\Debug\%.o: %.cpp
+$(objects): %.o: $(patsubst $(objectdir)%.o, %.cpp, $@)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
