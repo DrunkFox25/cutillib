@@ -8,11 +8,13 @@ LDFLAGS = -shared -Wl,--output-def=bin/Debug/libutil.def -Wl,--out-implib=bin/De
 LOADLIBS = -lgdi32
 
 objects = obj/Debug/colortable.o obj/Debug/main.o obj/Debug/outsrcstring.o obj/Debug/screen.o obj/Debug/systems.o
+build = bin/Debug/util.dll
+
 objectdir = obj/Debug
-builddir = bin/Debug/util.dll
+builddir = bin/Debug
 
 
-all: $(objects) $(builddir)
+all: $(objects) $(build)
 
 $(objectdir):
 	mkdir -p $(objectdir)
@@ -24,8 +26,8 @@ $(objects): $(objectdir)/%.o: %.cpp | $(objectdir)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 
-$(builddir): $(objects) | $(builddir)
-	touch $(builddir)
+$(build): $(objects) | $(builddir)
+	touch $(build)
 	$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 
