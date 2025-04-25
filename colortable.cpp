@@ -13,8 +13,8 @@ hash_map<string, COLOR_HEX> ColorTable;
 static bool initColorTable = false;
 
 
-void DLL_EXPORT get_color(const char* name, COLOR_HEX &color){
-	color = ColorTable[(string)name];
+COLOR_HEX DLL_EXPORT get_color(const char* name){
+	return ColorTable[(string)name];
 }
 
 int DLL_EXPORT loadColorTable(const char* path){
