@@ -1,6 +1,6 @@
 
 CC = gcc
-CXX = gcc
+CXX = g++.exe
 
 CPPFLAGS = -Wall -g -DBUILD_DLL
 
