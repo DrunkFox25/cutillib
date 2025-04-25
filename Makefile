@@ -27,3 +27,6 @@ clean:
 
 check:
 	echo check
+
+distcheck:
+	echo distcheck
