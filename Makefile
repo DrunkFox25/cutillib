@@ -7,12 +7,12 @@ CPPFLAGS = -Wall -g -DBUILD_DLL
 LDFLAGS = -shared -Wl,--output-def=bin\Debug\libutil.def -Wl,--out-implib=bin\Debug\libutil.a -Wl,--dll
 LOADLIBS = -lgdi32
 
-objects = colortable.o main.o outsrcstring.o screen.osystems.o
+objects = colortable.o main.o outsrcstring.o screen.o systems.o
 
 
 all: $(objects)
 
-$(objects): %.o: %.cpp #Makefile:14: *** missing separator.
+$(objects): %.o: %.cpp
 	echo "prereq" $^ "target" $@
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
