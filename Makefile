@@ -22,7 +22,7 @@ $(objects): $(objectdir)/%.o: %.cpp
 
 
 $(builddir): $(objects)
-	echo. > $(builddir)
+	touch $(builddir)
 	$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 
