@@ -12,7 +12,7 @@ objects = obj\Debug\colortable.o obj\Debug\main.o obj\Debug\outsrcstring.o obj\D
 
 all: $(objects) bin\Debug\util.dll
 
-$(objects): %.o: %.cpp
+$(objects): obj\Debug\%.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
