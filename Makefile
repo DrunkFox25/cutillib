@@ -15,7 +15,7 @@ builddir = bin\Debug\util.dll
 all: $(objectdir) $(objects) $(builddir)
 
 $(objectdir):
-    mkdir -p $(objectdir)
+	mkdir -p $(objectdir)
 
 $(objects): $(objectdir)\%.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
