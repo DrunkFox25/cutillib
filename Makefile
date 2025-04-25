@@ -7,9 +7,9 @@ CPPFLAGS = -Wall -g -DBUILD_DLL
 LDFLAGS = -shared -Wl,--output-def=bin/Debug/libutil.def -Wl,--out-implib=bin/Debug/libutil.a -Wl,--dll
 LOADLIBS = -lgdi32
 
-#obj/Debug/colortable.o
+#obj/Debug/screen.o #needs std::iobase ref???
 #obj/Debug/systems.o
-objects = obj/Debug/main.o obj/Debug/outsrcstring.o obj/Debug/screen.o
+objects = obj/Debug/main.o obj/Debug/outsrcstring.o obj/Debug/colortable.o
 build = bin/Debug/util.dll
 
 objectdir = obj/Debug
