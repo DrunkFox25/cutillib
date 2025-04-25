@@ -7,7 +7,7 @@ CPPFLAGS = -Wall -g -DBUILD_DLL
 LDFLAGS = -shared -Wl,--output-def=bin/Debug/libutil.def -Wl,--out-implib=bin/Debug/libutil.a -Wl,--dll
 LOADLIBS = -lgdi32
 
-objects = obj/Debugcolortable.o obj/Debug/main.o obj/Debug/outsrcstring.o obj/Debug/screen.o obj/Debug/systems.o
+objects = obj/Debug/colortable.o obj/Debug/main.o obj/Debug/outsrcstring.o obj/Debug/screen.o obj/Debug/systems.o
 objectdir = obj/Debug
 builddir = bin/Debug/util.dll
 
