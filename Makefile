@@ -13,7 +13,6 @@ objects = colortable.o main.o outsrcstring.o screen.o systems.o
 all: $(objects)
 
 $(objects): %.o: %.cpp
-	echo "prereq" $^ "target" $@
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $^ -o $@
 
 
@@ -25,3 +24,6 @@ bin\Debug\util.dll: $(objects)
 
 clean:
 	rm -f objects
+
+check:
+	echo check
