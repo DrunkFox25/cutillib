@@ -26,7 +26,7 @@ $(objects): $(objectdir)/%.o: %.cpp | $(objectdir)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 
-$(build): $(objects) | $(builddir)
+$(build): obj/Debug/main.o | $(builddir)
 	touch $(build)
 	$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
