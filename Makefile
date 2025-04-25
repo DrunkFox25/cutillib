@@ -12,16 +12,19 @@ objectdir = obj/Debug
 builddir = bin/Debug/util.dll
 
 
-all: $(objectdir) $(objects) $(builddir)
+all: $(objects) $(builddir)
 
 $(objectdir):
 	mkdir -p $(objectdir)
 
-$(objects): $(objectdir)/%.o: %.cpp
+$(builddir):
+	mkdir -p $(builddir)
+
+$(objects): $(objectdir)/%.o: %.cpp | $(objectdir)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 
-$(builddir): $(objects)
+$(builddir): $(objects) | $(builddir)
 	touch $(builddir)
 	$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
